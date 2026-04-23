@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Generador XML desde CHK</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="hero">
+      <div>
+        <span class="badge">Generador XML</span>
+        <h1>Convertir archivo .CHK a XML</h1>
+        <p>
+          Sube tu archivo <strong>.CHK</strong>, valida los datos extraídos y descarga un XML con estructura de factura interna.
+        </p>
+      </div>
+    </section>
+
+    <section class="card upload-card">
+      <label class="dropzone" for="chkFile">
+        <input type="file" id="chkFile" accept=".chk,.CHK,text/plain" />
+        <div class="drop-icon">📄</div>
+        <h2>Selecciona tu archivo .CHK</h2>
+        <p>Arrastra o carga el archivo del ticket para convertirlo.</p>
+      </label>
+
+      <div class="actions">
+        <button id="btnGenerate" disabled>Generar XML</button>
+        <button id="btnDownload" disabled class="secondary">Descargar XML</button>
+        <button id="btnClear" class="ghost">Limpiar</button>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h2>Datos extraídos</h2>
+        <div id="dataPreview" class="data-preview">
+          <p class="muted">Aún no se ha cargado ningún archivo.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Vista previa XML</h2>
+        <pre id="xmlPreview" class="xml-preview">El XML aparecerá aquí...</pre>
+      </div>
+    </section>
+
+    <section class="card warning">
+      <h2>Importante</h2>
+      <p>
+        Este XML es una estructura interna tipo factura. No es un CFDI timbrado ni válido ante SAT hasta que pase por un sistema de facturación/PAC.
+      </p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
